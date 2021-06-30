@@ -4,45 +4,7 @@ $(document).ready(function() {
 		$(this).toggleClass('rotated')
 	});
 
-	if ($('.offers__slider').length){
-		var swiperOffer = new Swiper('.offers__slider', {
-			speed: 800,
-			spaceBetween: 0,
-			slidesPerView: "auto",
-			mousewheel: {
-				releaseOnEdges: true,
-			},
-			on:{
-				reachBeginning: function () {
-					if (!detectmob()) {
-						setTimeout(function () {
-							fullpage_toggle(true,'up');
-						},100)
-					}
-				},
-				reachEnd: function () {
-					if (!detectmob()) {
-						setTimeout(function () {
-							fullpage_toggle(true,'down');
-						},100);
-					}
-				},
-				fromEdge: function () {
-					fullpage_toggle(false,'up');
-				},
-				resize: function () {
-					$('.swiper-wrapper').height('');
-				}
-			},
-			breakpoints: {
-				1025: {
-					allowTouchMove: false,
-					loop: false,
-					freeMode: true
-				},
-			}
-		});
-	}
+
 	fearModePC = true;
 	detectFun();
 })
@@ -108,11 +70,54 @@ function detectFun(){
 		if (typeof swiperFear !== "undefined"){
 			swiperFear.destroy(true, true);
 		}
+		if (typeof swiperOffer !== "undefined"){
+			swiperOffer.destroy(true, true);
+		}
 
 		if ($(window).width() < 1025){
 			$('.fears__item').addClass('swiper-slide').appendTo('.fears__list');
 			$('.fears__slide').remove();
 			fearModePC = false;
+
+			if ($('.offers__slider').length){
+				swiperOffer = new Swiper('.offers__slider', {
+					speed: 800,
+					spaceBetween: 0,
+					slidesPerView: "auto",
+					mousewheel: {
+						releaseOnEdges: true,
+					},
+					on:{
+						reachBeginning: function () {
+							if (!detectmob()) {
+								setTimeout(function () {
+									fullpage_toggle(true,'up');
+								},100)
+							}
+						},
+						reachEnd: function () {
+							if (!detectmob()) {
+								setTimeout(function () {
+									fullpage_toggle(true,'down');
+								},100);
+							}
+						},
+						fromEdge: function () {
+							fullpage_toggle(false,'up');
+						},
+						resize: function () {
+							$('.swiper-wrapper').height('');
+						}
+					},
+					breakpoints: {
+						1025: {
+							allowTouchMove: false,
+							loop: false,
+							freeMode: true
+						},
+					}
+				});
+			}
 		} else {
 			if (!fearModePC) {
 
@@ -150,5 +155,14 @@ function detectFun(){
 				}
 			}
 		});
+
+
 	}
 }
+
+$(window).on('load',function (){
+	$('.home-content__img').removeClass('start');
+	setTimeout(function (){
+		$('.home-content__img').addClass('loaded');
+	},1100);
+});

@@ -152,7 +152,24 @@
 		}
 		@include min('md'){
 			.svg-block{
-				transition: transform 1s;
+				transition: transform 1s, opacity 0.5s;
+				&--1,
+				&--2,
+				&--3,
+				&--4,
+				&--5,
+				&--6{
+					transition-delay: 0.8s;
+				}
+				&--10,
+				&--11{
+					transition-delay: 1s;
+				}
+			}
+			&.loaded{
+				.svg-block{
+					transition-delay: 0s !important;
+				}
 			}
 			&.active{
 				.svg-block{
@@ -173,6 +190,44 @@
 					}
 					&--6{
 						transform: translate(110px,130px);
+					}
+				}
+			}
+			&.start{
+				.svg-block{
+					&--1{
+						transform: translate(0px, -160px);
+						opacity: 0;
+					}
+					&--2{
+						transform: translate(300px,0px);
+						opacity: 0;
+					}
+					&--3{
+						transform: translate(70px,70px);
+						opacity: 0;
+					}
+					&--4{
+						transform: translate(0,-270px);
+						opacity: 0;
+					}
+					&--5{
+						transform: translate(-120px,0px);
+						opacity: 0;
+					}
+					&--6{
+						transform: translate(110px,130px);
+						opacity: 0;
+					}
+
+					&--10{
+						transform: translate(0,-100%);
+					}
+					&--11{
+						transform: translate(0,-100%);
+					}
+					&--all{
+						transform: translate(100%,0 );
 					}
 				}
 			}

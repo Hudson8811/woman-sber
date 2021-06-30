@@ -9,7 +9,7 @@
 	&__slider{
 		margin-top: sc(31);
 		width: 100%;
-		padding: 0 sc(176);
+		padding: 0 ;
 		@include max('md'){
 			padding: 0 vw(7);
 			margin-top: 0;
@@ -20,6 +20,8 @@
 		@include min('md'){
 			transition-duration: 0.07s !important;
 			transition-timing-function: linear;
+			display: flex;
+			justify-content: center;
 		}
 		@include max('md'){
 			padding: vw(15) 0;
@@ -40,7 +42,7 @@
 	&__inner{
 		transform-style: preserve-3d;
 		transition: transform 1.5s;
-		width: sc(650);
+		width: sc(590);
 		height: sc(618);
 		position: relative;
 		box-shadow: 2.29646px 2.29646px 22.9646px rgba(239, 193, 168, 0.25);
