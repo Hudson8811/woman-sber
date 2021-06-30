@@ -1,0 +1,60 @@
+@font-face {
+	font-family: 'SB Sans Display';
+	src: local('SB Sans Display Semibold'), local('SBSansDisplay-Semibold'),
+	url('../fonts/SBSansDisplay-Semibold.woff2') format('woff2'),
+	url('../fonts/SBSansDisplay-Semibold.woff') format('woff');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'SB Sans Display';
+	src: local('SB Sans Display'), local('SBSansDisplay-Regular'),
+	url('../fonts/SBSansDisplay-Regular.woff2') format('woff2'),
+	url('../fonts/SBSansDisplay-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'SB Sans Display';
+	src: local('SB Sans Display Light'), local('SBSansDisplay-Light'),
+	url('../fonts/SBSansDisplay-Light.woff2') format('woff2'),
+	url('../fonts/SBSansDisplay-Light.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Helvetica';
+	src: local('Helvetica Bold'), local('Helvetica-Bold'),
+	url('../fonts/Helvetica-Bold.woff2') format('woff2'),
+	url('../fonts/Helvetica-Bold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Helvetica';
+	src: local('Helvetica Light'), local('Helvetica-Light'),
+	url('../fonts/Helvetica-Light.woff2') format('woff2'),
+	url('../fonts/Helvetica-Light.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Helvetica';
+	src: local('Helvetica Regular'), local('Helvetica-Regular'),
+	url('../fonts/Helvetica-Regular.woff2') format('woff2'),
+	url('../fonts/Helvetica-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+

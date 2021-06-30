@@ -1,0 +1,26 @@
+/* base */
+@import "base/var";
+@import "base/reset";
+@import "base/fonts";
+
+/* mixin */
+@import "base/mixin";
+
+/*libs*/
+@import "./../../node_modules/fullpage.js/dist/fullpage.min.css";
+@import "./../../node_modules/swiper/swiper";
+
+/* main */
+@import "partials/main";
+
+/* components */
+//@import "partials/text-style";
+@import "partials/footer";
+
+
+/*blocks*/
+@import "blocks/page";
+@import "blocks/last";
+
+
+

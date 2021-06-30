@@ -1,0 +1,25 @@
+/* media */
+$media-list: (
+	'xxs': 375,
+	'xs': 560,
+	'sm': 767,
+	'md': 1024,
+	'lg': 1279,
+	'xl': 1599,
+	'xxl': 1900
+);
+
+
+/* шрифты */
+$mainFont: 'SB Sans Display', sans-serif;
+$secondFont: 'Helvetica', sans-serif;
+
+$fs-main: 16px;
+
+
+/* цвета */
+$textMainColor: #333F48;
+$textTitleColor: #1C4F5F;
+$orange: #FFE6D9;
+$green: #21A038;
+$gray: #AC95BA;
