@@ -45,6 +45,7 @@
 		position: relative;
 		box-shadow: 2.29646px 2.29646px 22.9646px rgba(239, 193, 168, 0.25);
 		border-radius: sc(57);
+		cursor: pointer;
 		@include max('md'){
 			width: vw(367);
 			height: vw(667);
