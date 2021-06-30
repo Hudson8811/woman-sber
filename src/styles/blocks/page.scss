@@ -12,6 +12,7 @@
 .section{
 	background: #FFE6D9;
 	padding-bottom: sc(128);
+	overflow: hidden;
 	&--1{
 		background: #FFE6D9 url("../images/section-1.png") center center no-repeat;
 		background-size: 100% 100%;

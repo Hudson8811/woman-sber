@@ -10,6 +10,7 @@ $(document).ready(function() {
 })
 
 $(window).on('resize', function () {
+	resizeScreen();
 	if (detectmob() && fearModePC){
 		$.fn.fullpage.destroy('all');
 		detectFun();
@@ -41,6 +42,29 @@ function detectmob() {
 	}
 }
 
+function resizeScreen(){
+	if (detectmob()){
+		$('.fears > *, .offers > *').css('zoom',1);
+	} else {
+		let wW = $(window).width();
+		let wH = $(window).height();
+		let ar =wW/wH;
+		let maxAR = 1.9;
+		console.log(ar);
+		if (ar > maxAR){
+			let zoom = 1 - (ar - maxAR)/maxAR;
+			$('.fears > *, .offers > *').css('zoom',zoom);
+		} else{
+			$('.fears > *, .offers > *').css('zoom',1);
+		}
+	}
+	if (typeof swiperFear !== "undefined"){
+		swiperFear.update();
+	}
+	if (typeof swiperOffer !== "undefined"){
+		swiperOffer.update();
+	}
+}
 
 function detectFun(){
 	if (detectmob()) {
@@ -158,6 +182,8 @@ function detectFun(){
 
 
 	}
+
+	resizeScreen();
 }
 
 $(window).on('load',function (){
