@@ -49,8 +49,7 @@ function resizeScreen(){
 		let wW = $(window).width();
 		let wH = $(window).height();
 		let ar =wW/wH;
-		let maxAR = 1.9;
-		console.log(ar);
+		let maxAR = 1.95;
 		if (ar > maxAR){
 			let zoom = 1 - (ar - maxAR)/maxAR;
 			$('.fears > *, .offers > *').css('zoom',zoom);
