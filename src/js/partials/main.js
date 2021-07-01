@@ -47,18 +47,34 @@ function detectmob() {
 }
 
 function resizeScreen(){
+	var isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 	if (detectmob()){
-		$('.fears > *, .offers > *').css('zoom',1);
+		if (isFirefox){
+			$('.fears > *, .offers > *').css('transform','none');
+		} else {
+			$('.fears > *, .offers > *').css('zoom',1);
+		}
 	} else {
 		let wW = $(window).width();
 		let wH = $(window).height();
 		let ar =wW/wH;
+		console.log(wW);
+		console.log(wH);
+		console.log(ar);
 		let maxAR = 1.9;
 		if (ar > maxAR){
 			let zoom = 1 - (ar - maxAR)/maxAR;
-			$('.fears > *, .offers > *').css('zoom',zoom);
+			if (isFirefox){
+				$('.fears > *, .offers > *').css('transform','scale('+zoom+')');
+			} else {
+				$('.fears > *, .offers > *').css('zoom',zoom);
+			}
 		} else{
-			$('.fears > *, .offers > *').css('zoom',1);
+			if (isFirefox){
+				$('.fears > *, .offers > *').css('transform','none');
+			} else {
+				$('.fears > *, .offers > *').css('zoom',1);
+			}
 		}
 	}
 	if (typeof swiperFear !== "undefined"){
@@ -182,7 +198,6 @@ function detectFun(){
 					freeMode: false,
 					allowTouchMove: false,
 					slidesPerView: 1,
-					loopAdditionalSlides: 3,
 					spaceBetween: 20,
 					loop: true,
 				}
