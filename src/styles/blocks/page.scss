@@ -31,6 +31,28 @@
 	}
 }
 
+.swiper-pagination{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: vw(5);
+	&-bullet{
+		width: vw(12);
+		height: vw(12);
+		margin: 0 vw(2.5);
+		border-radius: 50%;
+		transition: opacity 0.2s;
+		background: #AC95BA;
+		opacity: 0.55;
+		&-active{
+			opacity: 1;
+		}
+	}
+	@include min('md'){
+		display: none;
+	}
+}
+
 
 .main-text{
 	font-style: normal;
@@ -378,6 +400,34 @@
 		}
 		&:hover{
 			transform: translateY(-50%) scale(1.05);
+		}
+	}
+	&__btn{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-decoration: none;
+		cursor: pointer;
+		font-family: $secondFont;
+		font-style: normal;
+		font-weight: bold;
+		font-size: sc(14);
+		line-height: 1.13;
+		text-align: center;
+		letter-spacing: 0.03em;
+		color: $textTitleColor;
+		background: linear-gradient(175.5deg, #FFFFFF 51.44%, rgba(255, 255, 255, 0) 120.38%), url(../images/fear-bg.png), #FFFFFF;
+		box-shadow: 0.902182px 0.902182px 9.02182px rgba(239, 193, 168, 0.25);
+		border-radius: sc(27);
+		width: sc(268);
+		height: sc(55);
+		transition: box-shadow 0.3s;
+		margin: sc(-13) auto 0;
+		&:hover{
+			box-shadow: 0.902182px 0.902182px 9.02182px rgba(239, 193, 168, 0.7);
+		}
+		@include max('md'){
+			display: none;
 		}
 	}
 }

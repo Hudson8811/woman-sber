@@ -4,6 +4,10 @@ $(document).ready(function() {
 		$(this).toggleClass('rotated')
 	});
 
+	$(document).on('click','.fears__btn',function (){
+		event.preventDefault();
+		fullpage_api.moveSectionDown();
+	});
 
 	fearModePC = true;
 	detectFun();
@@ -49,7 +53,7 @@ function resizeScreen(){
 		let wW = $(window).width();
 		let wH = $(window).height();
 		let ar =wW/wH;
-		let maxAR = 1.95;
+		let maxAR = 1.9;
 		if (ar > maxAR){
 			let zoom = 1 - (ar - maxAR)/maxAR;
 			$('.fears > *, .offers > *').css('zoom',zoom);
@@ -110,6 +114,9 @@ function detectFun(){
 					mousewheel: {
 						releaseOnEdges: true,
 					},
+					pagination: {
+						el: '.offers__pagination',
+					},
 					on:{
 						reachBeginning: function () {
 							if (!detectmob()) {
@@ -167,6 +174,9 @@ function detectFun(){
 				prevEl: ".fears__arrow--left",
 			},
 			loop: false,
+			pagination: {
+				el: '.fears__pagination',
+			},
 			breakpoints: {
 				1025: {
 					freeMode: false,

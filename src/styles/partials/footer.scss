@@ -4,7 +4,7 @@
 	left: 0;
 	width: 100%;
 	z-index: 10;
-	padding: sc(41) sc(200) sc(41) sc(192);
+	padding: 0 sc(200) sc(41) sc(192);
 	box-sizing: border-box;
 	@include max('md'){
 		position: relative;
