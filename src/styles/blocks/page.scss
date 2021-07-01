@@ -423,6 +423,8 @@
 		height: sc(55);
 		transition: box-shadow 0.3s;
 		margin: sc(-13) auto 0;
+		z-index: 10;
+		position: relative;
 		&:hover{
 			box-shadow: 0.902182px 0.902182px 9.02182px rgba(239, 193, 168, 0.7);
 		}
