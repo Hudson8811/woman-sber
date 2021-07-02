@@ -6,6 +6,7 @@
 	z-index: 10;
 	padding: 0 sc(200) sc(41) sc(192);
 	box-sizing: border-box;
+	pointer-events: none;
 	@include max('md'){
 		position: relative;
 		padding: vw(28) vw(20) vw(134);
@@ -19,10 +20,12 @@
 			flex-direction: column-reverse;
 		}
 	}
-	&__social{}
-	&__link{
-		opacity: 1;
+	&__social{
 		pointer-events: auto;
+	}
+	&__link{
+		pointer-events: auto;
+		opacity: 1;
 		transition: opacity 0.3s;
 		a{
 			display: block;

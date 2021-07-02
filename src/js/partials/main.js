@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	$(document).on('click','.fear, .offer',function (){
-		if (!event.target.classList.contains('fear__link')){
+		if (event.target.tagName.toLowerCase() != 'a'){
 			event.preventDefault();
 			$(this).toggleClass('rotated')
 		}
@@ -8,7 +8,11 @@ $(document).ready(function() {
 
 	$(document).on('click','.fears__btn',function (){
 		event.preventDefault();
-		fullpage_api.moveSectionDown();
+		if (detectmob()){
+			$("html").animate({scrollTop: $("#offers").offset().top}, 300 );
+		} else {
+			fullpage_api.moveSectionDown();
+		}
 	});
 
 	fearModePC = true;
@@ -40,7 +44,7 @@ function detectmob() {
 			navigator.userAgent.match(/iPod/i) ||
 			navigator.userAgent.match(/BlackBerry/i) ||
 			navigator.userAgent.match(/Windows Phone/i) ||
-			$( window ).width() < 1024
+			$( window ).width() < 1025
 	) {
 		return true;
 	} else {
@@ -116,7 +120,7 @@ function detectFun(){
 			swiperOffer.destroy(true, true);
 		}
 
-		if ($(window).width() < 1025){
+		if (detectmob()){
 			$('.fears__item').addClass('swiper-slide').appendTo('.fears__list');
 			$('.fears__slide').remove();
 			fearModePC = false;
