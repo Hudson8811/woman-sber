@@ -1,7 +1,9 @@
 $(document).ready(function() {
 	$(document).on('click','.fear, .offer',function (){
-		event.preventDefault();
-		$(this).toggleClass('rotated')
+		if (!event.target.classList.contains('fear__link')){
+			event.preventDefault();
+			$(this).toggleClass('rotated')
+		}
 	});
 
 	$(document).on('click','.fears__btn',function (){
@@ -58,9 +60,6 @@ function resizeScreen(){
 		let wW = $(window).width();
 		let wH = $(window).height();
 		let ar =wW/wH;
-		console.log(wW);
-		console.log(wH);
-		console.log(ar);
 		let maxAR = 1.9;
 		if (ar > maxAR){
 			let zoom = 1 - (ar - maxAR)/maxAR;

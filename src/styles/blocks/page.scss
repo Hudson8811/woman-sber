@@ -276,12 +276,13 @@
 	> * + ul {
 		margin-top: sc(48);
 		@include max('md'){
-			margin-top: vw(26);
+			margin-top: vw(15);
 		}
 	}
 	ul{
 		list-style: none;
 		padding: 0;
+		margin-bottom: 0;
 		li {
 			font-style: normal;
 			font-weight: normal;
@@ -297,7 +298,7 @@
 			+ li {
 				margin-top: sc(24);
 				@include max('md'){
-					margin-top: vw(10);
+					margin-top: vw(8);
 				}
 			}
 			&::before{
@@ -466,6 +467,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		justify-content: space-between;
 		padding: sc(44);
 		box-sizing: border-box;
 		background: linear-gradient(168.5deg, #FFFFFF 51.44%, rgba(255, 255, 255, 0) 136.38%), url(../images/fear-bg.png) center center /cover, #FFFFFF;
@@ -484,11 +486,54 @@
 			width: 100%;
 			height: 100%;
 			transform: rotateY(180deg);
+			padding-bottom: sc(56);
+			@include max('md'){
+				padding-bottom: vw(14);
+			}
 		}
 	}
 	&.rotated{
 		.fear__inner{
 			transform: rotateY(180deg);
+		}
+	}
+	&__top{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	&__bottom{}
+	&__link{
+		font-family: $secondFont;
+		font-style: normal;
+		font-weight: bold;
+		font-size: sc(14);
+		line-height: 1.13;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		letter-spacing: 0.03em;
+		color: $textTitleColor;
+		text-decoration: none;
+		cursor: pointer;
+		width: sc(268);
+		height: sc(55);
+		background: #FFFFFF;
+		box-shadow: 0.902182px 0.902182px 9.02182px rgba(239, 193, 168, 0.25);
+		border-radius: sc(27.5);
+		transition: box-shadow 0.3s;
+		@include min('md'){
+			&:hover{
+				box-shadow: 0.902182px 0.902182px 9.02182px rgba(239, 193, 168, 0.7), inset  0 0 5px $textTitleColor;
+			}
+		}
+		@include max('md'){
+			font-size: vw(12);
+			width: vw(163);
+			height: vw(34);
+			box-shadow: 0.548408px 0.548408px 5.48408px rgba(239, 193, 168, 0.25);
+			border-radius: vw(16.7164);
 		}
 	}
 
@@ -566,7 +611,7 @@
 		.fear__text{
 			width: sc(443);
 			@include max('md'){
-				width: vw(239);
+				width: vw(248);
 			}
 		}
 		.fear__title--back{
@@ -586,7 +631,7 @@
 		.fear__text{
 			width: sc(452);
 			@include max('md'){
-				width: vw(244);
+				width: vw(305);
 			}
 		}
 		.fear__title--back{
@@ -658,7 +703,7 @@
 			}
 		}
 		.fear__text{
-			width: sc(340);
+			width: sc(480);
 			margin-top: sc(35);
 			@include max('md'){
 				width: vw(300);
