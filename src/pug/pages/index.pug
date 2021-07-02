@@ -429,7 +429,11 @@ block main
 									use(xlink:href="images/sprite.svg#arrow-right")
 					a.fears__btn(href="javascript:;") Узнать больше об инвестициях
 					.fears__pagination.swiper-pagination
-		.section.section--3.offers
+			.mobile-middle
+				a.mobile-middle__link(href="#offers")
+					svg
+						use(xlink:href="images/sprite.svg#arrow-down")
+		.section.section--3.offers#offers
 			.offers__slider-container
 				.offers__slider.swiper-container
 					.offers__list.swiper-wrapper
