@@ -114,3 +114,35 @@
 		}
 	}
 }
+
+
+
+.description-content {
+	box-sizing: border-box;
+	padding: 1.19vw 8.85vw 3.125vw;
+	background: #f4f5f6;
+	overflow: hidden;
+
+	@include max('md'){
+		padding: 4.32vw 13.52vw;
+	}
+
+	p {
+		font-weight: normal;
+		font-size: 0.625vw;
+		line-height: 1.09vw;
+		text-align: center;
+		letter-spacing: 0.03em;
+		color: #636565;
+		opacity: 0.5;
+		overflow-y: auto;
+
+		@include max('md'){
+			height: 40.09vw;
+			font-size: 2.17vw;
+			line-height: 2.41vw;
+			padding-right: 20.24vw;
+			margin-right: -20.24vw;
+		}
+	}
+}
